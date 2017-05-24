@@ -6,3 +6,20 @@ function dump($obj)
 	var_dump($obj);
 	echo "</pre>";
 }
+
+
+function checkUser($username,$password){
+	
+}
+
+function logIn($username){
+	
+}
+
+function logOut(){
+	
+}
+
+function isLoggedIn(){
+	
+}
