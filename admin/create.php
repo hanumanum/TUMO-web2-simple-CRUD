@@ -7,7 +7,7 @@ include "../lib.php";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 	$title = addslashes($_POST["title"]);
 	$content = addslashes($_POST["content"]);
-	$order = (int)$_POST["order"];
+	$order = (float)$_POST["order"];
 
 	$sql = "INSERT INTO `pages` (`title`,`content`,`order`) 
 			VALUES ('$title','$content',$order)";
