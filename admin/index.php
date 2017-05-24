@@ -26,13 +26,17 @@ include "../lib.php";
 		<div class="row">
 			<div class="col-md-9">
 				<h2>Ստեղծված էջերի ցանկ</h2>
-				<table class="table">
-					<tr>
-						<th>ID</th>
-						<th>Վերնագիր</th>
-						<th>Հերթը</th>
-						<th colspan="2">Գործիքներ</th>
-					</tr>
+				<table class="table" id="articles">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Վերնագիր</th>
+							<th>Հերթը</th>
+							<th>Խմբագրել</th>
+							<th>Ջնջել</th>
+						</tr>
+					</thead>
+					<tbody>
 					<?php $sql = "SELECT * FROM pages";
 						   $res = mysqli_query($conn,$sql); 
 						   while($p = mysqli_fetch_assoc($res))
@@ -46,8 +50,7 @@ include "../lib.php";
 							   	echo "</tr>";
 						   }
 					?>
-
-
+				</tbody>
 				</table>
 
 				<div class="row">
@@ -65,6 +68,17 @@ include "../lib.php";
 </div>
 
 <?php include "../scripts.php" ?>
+
+<!-- include summernote css/js-->
+<link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
+<script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    	$('#articles').DataTable();
+	});
+</script>
 
 </body>
 </html>
