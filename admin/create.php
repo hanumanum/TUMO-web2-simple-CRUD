@@ -2,6 +2,7 @@
 include "../connection.php";
 include "../settings.php";
 include "../lib.php";
+include "logincheck.php";
 
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){

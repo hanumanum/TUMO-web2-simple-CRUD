@@ -3,6 +3,16 @@ include "../connection.php";
 include "../settings.php";
 include "../lib.php";
 
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+	$username = $_POST["username"];
+	$password = $_POST["password"];
+
+	if(checkUser($username,$password)){
+		logIn($username);
+		header("Location: index.php");
+	}
+}
+
 ?>
 
 <!DOCTYPE html>
